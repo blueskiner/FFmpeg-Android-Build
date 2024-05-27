@@ -6,7 +6,7 @@ export ROOT_SOURCE=$(cd `dirname $0`; pwd)
 SYSTEM=$(uname -s)
 
 if [ "${SYSTEM}" = "Linux" ]; then
-  export NDK=/opt/Android/android-ndk-r13b
+  export NDK=/home/mlz/Android/android-ndk-r14b
   export TOOLCHAIN=$NDK/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64
 fi
 
@@ -31,7 +31,7 @@ fi
 
 # 源码是否存在
 if [ ! -d "ffmpeg" ]; then
-  tar -zxvf ffmpeg.tar.gz 
+  tar -zxvf ffmpeg-4.4.4.tar.gz --transform s/ffmpeg-4.4.4/ffmpeg/
 fi
 
 if [ ! -d "x264" ]; then
@@ -39,7 +39,7 @@ if [ ! -d "x264" ]; then
 fi
 
 if [ ! -d "fdk-aac" ]; then
-  tar -zxvf fdk-aac.tar.gz 
+  tar -zxvf fdk-aac-2.0.3.tar.gz --transform s/fdk-aac-2.0.3/fdk-aac/
 fi
 
 # 判断编译目录是否存在源码, 不存在则复制到编译目录

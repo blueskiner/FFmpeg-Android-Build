@@ -48,29 +48,27 @@ mkdir -p ${PREFIX}
 --enable-runtime-cpudetect \
 --enable-small \
 --disable-network \
---disable-vda \
 --disable-iconv \
 --enable-asm \
 --enable-neon \
 --enable-yasm \
+--enable-pic \
 --disable-encoders \
---enable-libfdk_aac \
 --enable-libx264 \
---enable-encoder=h263 \
+--enable-libfdk_aac \
 --enable-encoder=libx264 \
 --enable-encoder=libfdk_aac \
 --enable-encoder=aac \
 --enable-encoder=mpeg4 \
 --enable-encoder=mjpeg \
---enable-encoder=png \
---enable-encoder=gif \
---enable-encoder=bmp \
+--enable-encoder=pcm_s16le \
+--enable-encoder=pcm_alaw \
+--enable-encoder=pcm_ulaw \
 --disable-muxers \
---enable-muxer=h264 \
---enable-muxer=flv \
---enable-muxer=gif \
---enable-muxer=mp3 \
+--enable-muxer=avi \
 --enable-muxer=dts \
+--enable-muxer=h264 \
+--enable-muxer=mp3 \
 --enable-muxer=mp4 \
 --enable-muxer=mov \
 --enable-muxer=mpegts \
@@ -82,52 +80,37 @@ mkdir -p ${PREFIX}
 --enable-decoder=aac \
 --enable-decoder=aac_latm \
 --enable-decoder=mp3 \
---enable-decoder=h263 \
 --enable-decoder=h264 \
 --enable-decoder=mpeg4 \
 --enable-decoder=mjpeg \
---enable-decoder=gif \
---enable-decoder=png \
---enable-decoder=bmp \
---enable-decoder=yuv4 \
 --disable-demuxers \
---enable-demuxer=image2 \
---enable-demuxer=h263 \
+--enable-demuxer=avi \
 --enable-demuxer=h264 \
---enable-demuxer=flv \
---enable-demuxer=gif \
 --enable-demuxer=aac \
---enable-demuxer=ogg \
 --enable-demuxer=dts \
 --enable-demuxer=mp3 \
 --enable-demuxer=mov \
 --enable-demuxer=m4v \
---enable-demuxer=concat \
 --enable-demuxer=mpegts \
 --enable-demuxer=mjpeg \
 --enable-demuxer=mpegvideo \
 --enable-demuxer=rawvideo \
---enable-demuxer=yuv4mpegpipe \
 --disable-parsers \
 --enable-parser=aac \
 --enable-parser=ac3 \
 --enable-parser=h264 \
 --enable-parser=mjpeg \
---enable-parser=png \
---enable-parser=bmp\
 --enable-parser=mpegvideo \
 --enable-parser=mpegaudio \
 --disable-protocols \
 --enable-protocol=file \
---enable-protocol=hls \
---enable-protocol=concat \
+--enable-protocol=pipe \
 --enable-protocol=rtmp \
 --enable-protocol=rtmpe \
 --enable-protocol=rtmps \
 --enable-protocol=rtmpt \
 --enable-protocol=rtmpte \
 --enable-protocol=rtmpts \
---disable-filters \
 --disable-filters \
 --enable-filter=aresample \
 --enable-filter=asetpts \
@@ -144,16 +127,20 @@ mkdir -p ${PREFIX}
 --enable-zlib \
 --disable-outdevs \
 --disable-doc \
+--disable-htmlpages \
+--disable-manpages \
+--disable-podpages \
+--disable-txtpages \
+--disable-programs \
 --disable-ffplay \
 --disable-ffmpeg \
---disable-ffserver \
 --disable-debug \
 --disable-ffprobe \
 --disable-postproc \
 --disable-avdevice \
 --disable-symver \
 --disable-stripping \
---extra-cflags="-Os -fpic ${OPTIMIZE_CFLAGS}" \
+--extra-cflags="-Os -fPIC ${OPTIMIZE_CFLAGS}" \
 --extra-ldflags="${ADDI_LDFLAGS}" \
 ${ADDITIONAL_CONFIGURE_FLAG}
 
@@ -183,6 +170,3 @@ ${TOOLCHAIN}/lib/gcc/arm-linux-androideabi/4.9.x/libgcc.a
 
 #回到根目录
 cd ${ROOT_SOURCE}
-
-
-

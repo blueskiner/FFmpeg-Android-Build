@@ -18,7 +18,7 @@ cd ${X264_SOURCE}
 --host=arm-linux-androideabi \
 --cross-prefix=${TOOLCHAIN}/bin/arm-linux-androideabi- \
 --sysroot=${PLATFORM} \
---extra-cflags="-Os -fpic ${EXTRA_CFLAGS}" \
+--extra-cflags="-Os -fPIC ${EXTRA_CFLAGS}" \
 --extra-ldflags="" \
 ${ADDITIONAL_CONFIGURE_FLAG}
 

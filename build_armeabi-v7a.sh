@@ -6,7 +6,7 @@ export ROOT_SOURCE=$(cd `dirname $0`; pwd)
 SYSTEM=$(uname -s)
 
 if [ "${SYSTEM}" = "Linux" ]; then
-  export NDK=/opt/Android/android-ndk-r13b
+  export NDK=/home/mlz/Android/android-ndk-r14b
   export TOOLCHAIN=$NDK/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64
 fi
 

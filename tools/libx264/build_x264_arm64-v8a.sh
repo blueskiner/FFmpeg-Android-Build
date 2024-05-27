@@ -26,7 +26,7 @@ cd ${X264_SOURCE}
 --disable-ffms \
 --disable-gpac \
 --disable-lsmash \
---extra-cflags="-Os -fpic ${EXTRA_CFLAGS}" \
+--extra-cflags="-Os -fPIC ${EXTRA_CFLAGS}" \
 --extra-ldflags="" \
 ${ADDITIONAL_CONFIGURE_FLAG}
 
